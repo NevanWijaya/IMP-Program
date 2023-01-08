@@ -1,0 +1,42 @@
+@Main []{
+    p := 4;
+    q := 5;
+    w := Fun2 (p q);
+    return w;
+}@
+
+@Fun [x y]{
+    if (y == 0) then {
+    return 0;
+    } else {
+    return (x % y);
+    };
+}@
+
+@Fun2 [x y]{
+    if (!(x == y)) then {
+    x := Fun(x y);
+    y := Fun(y x);
+    return (1 + Fun2(x y));
+    } else {
+    return (2 + Fun(x y));
+    };
+}@
+
+@Fun3 [x y]{
+    return (x + y);
+}@
+
+@Fun4 [x y]{
+    return (x - y);
+}@
+
+@Fun5 [y]{
+    x := 0;
+    c := 1;
+    while (c <= y) {
+        x := (x + c);
+        c := (c + 1); 
+    };
+    return x;
+}@
